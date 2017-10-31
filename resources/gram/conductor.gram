@@ -1,0 +1,14 @@
+#JSGF V1.0;
+grammar conductor;
+
+<command> = <action> | (<action> and <command>);
+
+<action> = Slurp | Barf | Stop | Start | <navigate>;
+
+<navigate> = navigate to <navigable>;
+
+<navigable> = Next Function | Previous Function | Previous line | Next line;
+
+<free_text> = <word> | (<word> <NULL> <free_text>);
+
+<word> = example;
